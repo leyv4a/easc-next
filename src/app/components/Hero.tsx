@@ -6,7 +6,7 @@ export default function Hero(){
     return (
         <section className={"container mx-auto items-center justify-center h-[80vh] flex flex-col gap-3 "}>
             <article className={"flex flex-col justify-center w-full "}>
-                <h1 className={"text-[14.6rem] text-center font-karla font-bold text-white tracking-widest leading-none "}>MAR
+                <h1 className={"text-[14.6rem] text-center font-karla font-bold tracking-widest leading-none  bg-gradient-to-r from-white from-30% via-[#f3922b] text-transparent bg-clip-text to-white bg-300% animate-gradient"}>MAR
                     Y VIDA</h1>
                 <h2 className={"text-5xl ms-8 font-karla font-bold text-white "}>Bienvenido a San Carlos</h2>
                 <p className={"text-white font-medium text-2xl font-karla ms-8"}>Explora, relájate y enamórate de la

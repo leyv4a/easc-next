@@ -8,6 +8,24 @@ export default {
   ],
   theme: {
     extend: {
+      animatedgradient: {
+        "0%": { backgroundPosition: "0% 50%" },
+        "50%": { backgroundPosition: "100% 50%" },
+        "100%": { backgroundPosition: "0% 50%" },
+      },
+      keyframes: {
+        animatedgradient: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+      },
+      animation: {
+        gradient: "animatedgradient 6s ease infinite alternate",
+      },
+      backgroundSize: {
+        "300%": "300%",
+      },
       fontFamily: {
         karla: ["Karla", "sans-serif"],
         logo : ["Liu Jian Mao Cao", "sans-serif"],
