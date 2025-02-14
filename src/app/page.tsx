@@ -1,101 +1,80 @@
-import Image from "next/image";
+import bg from "../../public/images/mainfondo.webp";
+import { Utensils, BedSingle,Plane,LandPlot,Footprints, FlameKindling, Waves, FishSymbol} from 'lucide-react';
+import React from "react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <>
+        <main className={"w-full min-h-[100vh] absolute top-0 overflow-x-hidden"} style={{
+            backgroundImage: `url(${bg.src})`,
+            backgroundSize: "cover",
+        }}>
+        <header className={"flex justify-between container mx-auto h-32 items-center"}>
+            <h1 className={"text-7xl font-logo font-bold drop-shadow-2xl tracking-tighter bg-gradient-to-r from-[#F3922B] to-[#F4C162] bg-clip-text text-transparent"}>EASC</h1>
+            <nav>
+                <ul className={"flex gap-5 font-karla font-semibold text-xl "}>
+                    <li className={"text-[#2A4D69]  hover:text-[#E97451] cursor-pointer"}>QUE HACER</li>
+                    <li className={"text-[#2A4D69]  hover:text-[#E97451] cursor-pointer"}>QUE COMER</li>
+                    <li className={"text-[#2A4D69]  hover:text-[#E97451] cursor-pointer"}>DIRECTORIO</li>
+                    <li className={"text-[#2A4D69]  hover:text-[#E97451] cursor-pointer"}>TOURS</li>
+                    <li className={"text-[#2A4D69]  hover:text-[#E97451] cursor-pointer"}>DESCARGABLES</li>
+                    <li className={"text-[#2A4D69]  hover:text-[#E97451] cursor-pointer"}>EVENTOS</li>
+                    <li className={"text-[#2A4D69]  hover:text-[#E97451] cursor-pointer"}>DESCARGABLES</li>
+                    <li className={"text-[#2A4D69]  hover:text-[#E97451] cursor-pointer"}>EVENTOS</li>
+                </ul>
+            </nav>
+        </header>
+            <section className={"container mx-auto items-center justify-center h-[80vh] flex flex-col gap-3 "}>
+                <article className={"flex flex-col justify-center w-full "}>
+                    <h1 className={"text-[14.6rem] text-center font-karla font-bold text-white tracking-widest leading-none "}>MAR
+                        Y VIDA</h1>
+                    <h2 className={"text-5xl ms-8 font-karla font-bold text-white "}>Bienvenido a San Carlos</h2>
+                    <p className={"text-white font-medium text-2xl font-karla ms-8"}>Explora, relájate y enamórate de la
+                        belleza de San Carlos</p>
+                </article>
+                <nav className={"ms-8 mt-5 flex justify-around w-full items-center "}>
+                    <FeaturesButton
+                        icon={<Utensils className={"text-[#E97451] text-2xl"}/>}
+                        label={"Restaurante Bar"}/>
+                    <FeaturesButton
+                        icon={<BedSingle className={"text-[#E97451] text-2xl"}/>}
+                        label={"Hospedaje"}/>
+                    <FeaturesButton
+                        icon={<Plane className={"text-[#E97451] text-2xl"}/>}
+                        label={"Atractivos Turísticos"}/>
+                    <FeaturesButton
+                        icon={<LandPlot className={"text-[#E97451] text-2xl"}/>}
+                        label={"Campos de Golf"}/>
+                    <FeaturesButton
+                        icon={<Footprints className={"text-[#E97451] text-2xl"}/>}
+                        label={"Senderismo"}/>
+                    <FeaturesButton
+                        icon={<FlameKindling className={"text-[#E97451] text-2xl"}/>}
+                        label={"Camping"}/>
+                    <FeaturesButton
+                        icon={<Waves className={"text-[#E97451] text-2xl"}/>}
+                        label={"Buceo"}/>
+                    <FeaturesButton
+                        icon={<FishSymbol className={"text-[#E97451] text-2xl"}/>}
+                        label={"Pesca"}/>
+                </nav>
+            </section>
+        </main>
+      </>
   );
 }
+
+
+interface FeaturesButtonProps {
+    icon: React.ReactNode;
+    label: string;
+}
+
+const FeaturesButton: React.FC<FeaturesButtonProps> = ({icon, label}) => (
+    <button
+        className={`flex flex-col justify-center items-center bg-[#2a4d69]/80 hover:bg-[#2a4d69] text-white text-xl font-karla font-semibold p-4 w-40 h-40`}
+    >
+        {icon}
+        {label}
+    </button>
+)
