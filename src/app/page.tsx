@@ -19,7 +19,7 @@ export default function Home() {
               />
 
               {/* Contenido */}
-              <div className="relative z-10 container mx-auto">
+              <div className="relative z-10 lg:w-[70vw] container  mx-auto">
                   <Navbar/>
                   <Hero/>
               </div>
