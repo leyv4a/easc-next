@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Navbar(){
     return (
-        <header className={"flex justify-between container mx-auto h-32 items-center"}>
+        <header className={"flex justify-between  h-32 items-center"}>
             <h1 className={"text-7xl font-logo font-bold drop-shadow-2xl tracking-tighter bg-gradient-to-r from-[#F3922B] to-[#F4C162] bg-clip-text text-transparent"}>EASC</h1>
-            <nav className={"flex gap-5 font-karla font-semibold text-xl "}>
+            <nav className={"hidden  md:flex gap-5 font-karla font-semibold text-xl "}>
                 <NavLinkButton label={"QUE HACER"}/>
                 <NavLinkButton label={"QUE COMER"}/>
                 <NavLinkButton label={"DIRECTORIO"}/>

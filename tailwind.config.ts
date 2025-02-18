@@ -7,6 +7,7 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
     extend: {
       animatedgradient: {
         "0%": { backgroundPosition: "0% 50%" },
