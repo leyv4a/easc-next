@@ -11,8 +11,8 @@ export default function Navbar(){
                 <NavLinkButton label={"TOURS"}/>
                 <NavLinkButton label={"DESCARGABLES"}/>
                 <NavLinkButton label={"EVENTOS"}/>
-                <NavLinkButton label={"DESCARGABLES"}/>
-                <NavLinkButton label={"EVENTOS"}/>
+           {/*     <NavLinkButton label={"DESCARGABLES"}/>
+                <NavLinkButton label={"EVENTOS"}/>*/}
             </nav>
         </header>
     )
