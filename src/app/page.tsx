@@ -65,7 +65,7 @@ function ConoceSanCarlos(){
 
 function Seccion2(){
     return (<>
-            <div className="relative w-full min-h-[60vh]">
+            <div className="relative w-full min-h-[60vh] ">
                 {/* Fondo de color */}
                 <Image
                     className={"fixed"}
@@ -79,12 +79,28 @@ function Seccion2(){
                 <section className="relative z-10 min-h-[60vh] flex items-center p-4 font-karla container mx-auto lg:w-[80vw]">
                     <div className="flex flex-col lg:flex-row gap-6 text-[#2b5c78] w-full h-full mt-10">
                         {/* Título y texto */}
-                        <div className="lg:w-1/2 ">
-                            {/*<h2 className="text-3xl md:text-5xl font-bold">Conoce San Carlos</h2>*/}
-                        <a title={"Ver el mapa"} target={"_blank"} href={"https://www.google.com/maps/place/85506+San+Carlos,+Son./data=!4m2!3m1!1s0x86c96319f9360f85:0x544470a59a1fc6d8"}><SvgSanCarlos/></a>
+                        <div className="lg:w-1/2 flex justify-center">
+                        <a title={"Ver el mapa"} target={"_blank"} href={"https://www.google.com/maps/place/85506+San+Carlos,+Son./data=!4m2!3m1!1s0x86c96319f9360f85:0x544470a59a1fc6d8"}>
+                            <SvgSanCarlos/></a>
                         </div>
-                        <div className="lg:w-1/2 space-y-4 text-start mx-4 ">
+                        <div className="lg:w-1/2 flex justify-center">
+                            <div
+                                className={"h-[100%] flex flex-col justify-center gap-1 py-2 px-5 rounded-2xl  md:w-[60%] bg-white  transition-all duration-300 "}>
+                                {/*HEADER*/}
+                                <div className={"text-start font-karla font-bold text-3xl text-[#2b5c78] "}>
+                                    <p className={"text-lg font-medium"}>Tradición, historia y esencia local</p>
+                                    <p>Sumérgete en la Cultura de San Carlos</p>
+                                </div>
+                                {/*BODY*/}
+                                <div className={"text-start font-karla"}>
+                                    <p className={"text-sm font-medium"}>San Carlos no solo es mar y aventura, también es un destino lleno de historia y cultura. Descubre las raíces de la región a través de la gastronomía, el arte y las tradiciones de su gente. Desde las leyendas del Cerro Tetakawi hasta las festividades locales, cada rincón tiene una historia que contar.</p>
+                                </div>
+                                {/*CTA*/}
+                                <button className={"bg-[#f4c162]/90 hover:bg-[#f4c162] w-1/2 mt-2 p-2 text-white rounded-md"}>
+                                    Cultura
+                                </button>
 
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -93,7 +109,7 @@ function Seccion2(){
     )
 }
 
-function SvgSanCarlos(){
+function SvgSanCarlos() {
     return (
         <svg width="437" height="372" viewBox="0 0 437 372" fill="none" xmlns="http://www.w3.org/2000/svg"
              className={"w-[80%] md:w-full fill-white hover:fill-gray-200 transition-all duration-300"}
