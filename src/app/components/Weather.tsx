@@ -6,11 +6,11 @@ export default function Weather () {
     const [isNight, setIsNight] = React.useState<boolean>(false);
     const [temperature, setTemperature] = React.useState<string>("");
 
-    let coords = "27.960194,-111.034444";
-    let baseUrl = "http://api.weatherapi.com/v1"
-    let apikey = process.env.WEATHER_API_KEY;
-    let method = "/current.json";
-    let url = baseUrl + method + "?key=" + apikey + "&q=" + coords;
+    const coords = "27.960194,-111.034444";
+    const baseUrl = "http://api.weatherapi.com/v1"
+    const apikey = process.env.WEATHER_API_KEY;
+    const method = "/current.json";
+    const url = baseUrl + method + "?key=" + apikey + "&q=" + coords;
 
     const fetchWeather = async () => {
         const response = await fetch(url);
