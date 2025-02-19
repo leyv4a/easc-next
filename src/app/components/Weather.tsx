@@ -4,6 +4,20 @@ import React  from "react";
 
 export default function Weather () {
     const [isNight, setIsNight] = React.useState<boolean>(false);
+    const [temperature, setTemperature] = React.useState<string>("");
+
+    let coords = "27.960194,-111.034444";
+    let baseUrl = "http://api.weatherapi.com/v1"
+    let apikey = process.env.WEATHER_API_KEY;
+    let method = "/current.json";
+    let url = baseUrl + method + "?key=" + apikey + "&q=" + coords;
+
+    const fetchWeather = async () => {
+        const response = await fetch(url);
+        const data = await response.json();
+        setTemperature(data.current.temp_c);
+    }
+
 
     const isAfter19 = () : boolean => {
         const now = new Date();
@@ -18,6 +32,7 @@ export default function Weather () {
         }
 
         updateStatus()
+        fetchWeather();
         const interval = setInterval(updateStatus, 60000)
 
         return () => clearInterval(interval)
@@ -25,6 +40,6 @@ export default function Weather () {
     return (
         <span
             className={`font-bold bg-gradient-to-b from-white  ${isNight ? 'to-[#2a4d69] via-[#2a4d69]' : 'to-[#E97451] via-[#E97451]'} bg-clip-text text-transparent text-sm flex gap-1`}>
-            {isNight ? <Moon className={"size-5 text-[#2a4d69]"}/> : <Sun className={"size-5 text-[#E97451]"}/>}27°C</span>
+            {isNight ? <Moon className={"size-5 text-[#2a4d69]"}/> : <Sun className={"size-5 text-[#E97451]"}/>}{temperature}°C</span>
     )
 }
