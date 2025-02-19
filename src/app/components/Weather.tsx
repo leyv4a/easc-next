@@ -24,7 +24,7 @@ export default function Weather () {
     }, [])
     return (
         <span
-            className={`font-bold bg-gradient-to-b from-white  ${isNight ? 'to-[#2a4d69] via-[#2a4d69]' : 'to-[#F4C162] via-[#F4C162]'} bg-clip-text text-transparent text-sm flex gap-1`}>
-            {isNight ? <Moon className={"size-5 text-[#2a4d69]"}/> : <Sun className={"size-5 text-[#F4C162]"}/>}27°C</span>
+            className={`font-bold bg-gradient-to-b from-white  ${isNight ? 'to-[#2a4d69] via-[#2a4d69]' : 'to-[#E97451] via-[#E97451]'} bg-clip-text text-transparent text-sm flex gap-1`}>
+            {isNight ? <Moon className={"size-5 text-[#2a4d69]"}/> : <Sun className={"size-5 text-[#E97451]"}/>}27°C</span>
     )
 }
