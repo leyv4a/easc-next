@@ -12,17 +12,19 @@ export default function Weather () {
     const method = "/current.json";
     const url = baseUrl + method + "?key=" + apikey + "&q=" + coords;
 
+    const url2 = "https://api.open-meteo.com/v1/forecast?latitude=27.960194&longitude=-111.034444&hourly=temperature_2m&timezone=auto"
+
     const fetchWeather = async () => {
-        const response = await fetch(url);
+        const response = await fetch(url2);
         const data = await response.json();
-        setTemperature(data.current.temp_c);
+        setTemperature(data.hourly.temperature_2m[167]);
+     /*   setTemperature(data.current.temp_c);*/
     }
 
 
     const isAfter19 = () : boolean => {
         const now = new Date();
         const currentTime = now.getHours();
-        console.log(currentTime);
         return currentTime >= 19;
     }
 

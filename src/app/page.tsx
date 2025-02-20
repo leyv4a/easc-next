@@ -4,6 +4,9 @@ import React from "react";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
+import tetakawi from "../../public/images/tetakawi.jpg";
+import delfinario from "../../public/images/delfinario.jpg";
+import algodones from "../../public/images/algodones.jpg";
 
 export default function Home() {
   return (
@@ -21,13 +24,14 @@ export default function Home() {
               />
 
               {/* Contenido */}
-              <div className="relative z-10 lg:w-[80vw] container mx-auto ">
+              <div className="relative z-10 lg:w-[80vw] container mx-auto mt-40 lg:mt-12">
                   <Navbar/>
                   <Hero/>
               </div>
           </main>
           <ConoceSanCarlos/>
           <Seccion2/>
+          <Seccion3/>
       </>
   );
 }
@@ -38,7 +42,7 @@ function ConoceSanCarlos(){
                 {/* Fondo de color */}
                 <div className="absolute inset-0 w-full min-h-[60vh] bg-[#f4c162]"/>
                 {/* Contenido */}
-                <section className="relative z-10 min-h-[60vh] flex items-center p-4 font-karla container mx-auto lg:w-[80vw]">
+                <section className="relative min-h-[60vh] flex items-center p-4 font-karla container mx-auto lg:w-[80vw]">
                     <div className="flex flex-col lg:flex-row gap-6 text-[#2b5c78] w-full h-full mt-10">
                         {/* Título y texto */}
                         <div className="lg:w-1/2 ">
@@ -76,7 +80,7 @@ function Seccion2(){
                     quality={80} // Ajusta calidad si es necesario
                 />
                 {/* Contenido */}
-                <section className="relative z-10 min-h-[60vh] flex items-center p-4 font-karla container mx-auto lg:w-[80vw]">
+                <section className="relative  min-h-[60vh] flex items-center p-4 font-karla container mx-auto lg:w-[80vw]">
                     <div className="flex flex-col lg:flex-row gap-6 text-[#2b5c78] w-full h-full mt-10">
                         {/* Título y texto */}
                         <div className="lg:w-1/2 flex justify-center">
@@ -88,7 +92,7 @@ function Seccion2(){
                                 className={"h-[100%] flex flex-col justify-center gap-1 py-2 px-5 rounded-2xl  md:w-[60%] bg-white  transition-all duration-300 "}>
                                 {/*HEADER*/}
                                 <div className={"text-start font-karla font-bold text-3xl text-[#2b5c78] "}>
-                                    <p className={"text-lg font-medium"}>Tradición, historia y esencia local</p>
+                                    <p className={"text-sm lg:text-lg font-medium"}>Tradición, historia y esencia local</p>
                                     <p>Sumérgete en la Cultura de San Carlos</p>
                                 </div>
                                 {/*BODY*/}
@@ -120,3 +124,31 @@ function SvgSanCarlos() {
         </svg>
     )
 }
+
+function Seccion3(){
+    return (
+        <section className={"w-full h-[80vh] min-h-[80vh] flex flex-col lg:flex-row items-center  font-karla "}>
+            <SectionCard image={algodones.src} color="#a09584" title={"Playa Los Algodones"} description={"Conocida por su arena blanca y aguas cristalinas, esta playa es ideal para nadar, practicar deportes acuáticos o simplemente relajarse bajo el sol."}/>
+            <SectionCard image={tetakawi.src} color="#e6690e" title={"Cerro Tetakawi"} description={"Este icónico cerro es el símbolo de San Carlos. Ofrece rutas de senderismo que llevan a la cima, desde donde se obtienen vistas panorámicas impresionantes del Mar de Cortés y los alrededores."}/>
+            <SectionCard image={delfinario.src} color="#4f97de" title={"Delfinario Sonora"} description={"Un centro dedicado a la conservación y educación marina, donde los visitantes pueden disfrutar de presentaciones educativas con delfines y lobos marinos, e incluso participar en interacciones directas con estos animales."}/>
+        </section>
+    )
+}
+
+interface SectionCardProps {
+    title: string;
+    description: string;
+    color? : string;
+    image? : string;
+}
+
+import NotFoundImage from "../../public/images/not-found.png";
+
+const SectionCard: React.FC<SectionCardProps> = ({title, description, color , image = `${NotFoundImage.src}`}) => (
+        <div style={{ backgroundColor: color }} className={`w-full  lg:w-1/3 h-full flex flex-col justify-center items-center gap-3 p-10 text-[#ffffff]`}>
+            <div className={"lg:size-2/3 size-80 bg-white rounded-lg relative overflow-hidden"}>
+                <Image src={image} alt={title} fill={true} className="object-cover rounded-lg hover:scale-110 transition-all duration-300 cursor-pointer"/>
+            </div>
+            <p className={"text-center text-2xl font-bold font-karla"}>{title}</p>
+            <p className={"text-center font-medium text-sm font-karla"}>{description}</p>
+    </div>);
