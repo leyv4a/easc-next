@@ -84,7 +84,7 @@ function Seccion2(){
                     <div className="flex flex-col lg:flex-row gap-6 text-[#2b5c78] w-full h-full mt-10">
                         {/* Título y texto */}
                         <div className="lg:w-1/2 flex justify-center">
-                        <a title={"Ver el mapa"} target={"_blank"} href={"https://www.google.com/maps/place/85506+San+Carlos,+Son./data=!4m2!3m1!1s0x86c96319f9360f85:0x544470a59a1fc6d8"}>
+                        <a className={"ms-14 lg:ms-0"} title={"Ver el mapa"} target={"_blank"} href={"https://www.google.com/maps/place/85506+San+Carlos,+Son./data=!4m2!3m1!1s0x86c96319f9360f85:0x544470a59a1fc6d8"}>
                             <SvgSanCarlos/></a>
                         </div>
                         <div className="lg:w-1/2 flex justify-center">

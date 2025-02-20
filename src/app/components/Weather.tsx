@@ -6,11 +6,11 @@ export default function Weather () {
     const [isNight, setIsNight] = React.useState<boolean>(false);
     const [temperature, setTemperature] = React.useState<string>("");
 
-    const coords = "27.960194,-111.034444";
+    /*const coords = "27.960194,-111.034444";
     const baseUrl = "https://api.weatherapi.com/v1"
     const apikey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
     const method = "/current.json";
-    const url = baseUrl + method + "?key=" + apikey + "&q=" + coords;
+    const url = baseUrl + method + "?key=" + apikey + "&q=" + coords;*/
 
     const url2 = "https://api.open-meteo.com/v1/forecast?latitude=27.960194&longitude=-111.034444&hourly=temperature_2m&timezone=auto"
 
