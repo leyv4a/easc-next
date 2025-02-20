@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
+import BackToTop from "@/app/components/BackToTop";
 import tetakawi from "../../public/images/tetakawi.jpg";
 import delfinario from "../../public/images/delfinario.jpg";
 import algodones from "../../public/images/algodones.jpg";
@@ -34,12 +35,13 @@ export default function Home() {
           <Seccion2/>
           <Seccion3/>
           <Footer/>
+         <BackToTop/>
           {/*FOOTER*/}
       </>
   );
 }
 
-function ConoceSanCarlos(){
+function ConoceSanCarlos() {
     return (<>
             <div className="relative w-full min-h-[60vh]">
                 {/* Fondo de color */}
