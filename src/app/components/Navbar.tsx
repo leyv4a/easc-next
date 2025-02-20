@@ -16,7 +16,7 @@ export default function Navbar(){
     }, []);
 
     return (
-        <header className={` fixed top-0 left-0 right-0 w-full px-0 lg:px-60 ${isScrolled ? "shadow-lg  bg-black " : "lg:bg-transparent bg-black"}`}>
+        <header className={` fixed top-0 left-0 right-0 w-full px-0 lg:px-60 ${isScrolled ? "shadow-lg  bg-black/90 " : "lg:bg-transparent bg-black/90"}`}>
             <div className={"flex justify-center lg:justify-between h-32 items-center"}>
                 <div className={"flex -gap-2 flex-col items-center"}>
                     <h1 className={"text-7xl font-logo font-bold drop-shadow-2xl tracking-tighter bg-gradient-to-r from-[#F3922B] to-[#F4C162] bg-clip-text text-transparent"}>EASC</h1>
