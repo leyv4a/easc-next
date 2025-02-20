@@ -7,7 +7,7 @@ export default function Weather () {
     const [temperature, setTemperature] = React.useState<string>("");
 
     const coords = "27.960194,-111.034444";
-    const baseUrl = "http://api.weatherapi.com/v1"
+    const baseUrl = "https://api.weatherapi.com/v1"
     const apikey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
     const method = "/current.json";
     const url = baseUrl + method + "?key=" + apikey + "&q=" + coords;
