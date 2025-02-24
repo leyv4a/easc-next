@@ -2,16 +2,16 @@ import bg from "../../public/images/mainfondo.webp";
 import bg2 from "../../public/images/fondo.jpg";
 import React from "react";
 import Image from "next/image";
-import Navbar from "@/app/ownComponents/Navbar";
-import Hero from "@/app/ownComponents/Hero";
-import BackToTop from "@/app/ownComponents/BackToTop";
+import Navbar from "@/components/own/Navbar";
+import Hero from "@/components/own/Hero";
+import BackToTop from "@/components/own/BackToTop";
 import tetakawi from "../../public/images/tetakawi.jpg";
 import delfinario from "../../public/images/delfinario.jpg";
 import algodones from "../../public/images/algodones.jpg";
 import NotFoundImage from "../../public/images/not-found.png";
-import Footer from "@/app/ownComponents/Footer";
-import SponsorCarousel from "@/app/ownComponents/SponsorCarousel";
-import SvgSanCarlos from "@/app/ownComponents/svg/SanCarlos";
+import Footer from "@/components/own/Footer";
+import SponsorCarousel from "@/components/own/SponsorCarousel";
+import SvgSanCarlos from "@/components/svg/SanCarlos";
 
 export default function Home() {
   return (
@@ -29,7 +29,6 @@ export default function Home() {
               <div className="relative z-10 lg:w-[80vw] container mx-auto mt-40 lg:mt-12">
                   <Navbar/>
                   <Hero/>
-
               </div>
           </main>
         <SponsorCarousel/>

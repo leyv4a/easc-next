@@ -4,14 +4,14 @@ import React from "react";
 export default function Footer(){
     return (
         <>
-            <footer className={"relative bottom-0 left-0 w-full h-auto flex flex-col gap-2 justify-between min-h-[100vh] lg:min-h-[60vh]"}>
+            <footer className={"relative bottom-0 left-0 w-full h-auto flex flex-col gap-2 justify-between lg:min-h-[60vh]"}>
                 {/* Fondo de color */}
                 <div
                     className={"absolute w-full h-full bg-black/90"}
                 />
                 {/* Contenido */}
                 <section
-                    className="relative  h-[60vh] min-h-[60vh] flex items-center p-4 font-karla container mx-auto lg:w-[80vw]">
+                    className="relative  lg:h-[60vh] h-[100vh] min-h-[60vh] flex items-center p-4 font-karla container mx-auto lg:w-[80vw]">
                     <div className="flex flex-col lg:flex-row gap-6 text-[#2b5c78] w-full h-full mt-10">
                         {/* Título y texto */}
                         <div className="lg:w-1/2 flex justify-start gap-5 mt-5">
@@ -20,7 +20,7 @@ export default function Footer(){
                             <FooterItems title={"Otros"}
                                          items={["Mapa", "Publicidad", "Política de privacidad", "Terminos y condiciones"]}/>
                         </div>
-                        <div className="lg:w-1/2 flex justify-start flex-col gap-5 items-center">
+                        <div className="lg:w-1/2 flex justify-start flex-col gap-5 items-center ">
                             <p className={"text-3xl text-white font-bold"}>Contacta con nosotros</p>
                             <div className="space-y-4 w-full max-w-md mx-auto">
                                 {/* Nombre */}
