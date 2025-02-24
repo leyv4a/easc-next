@@ -4,8 +4,8 @@ import Weather from "@/components/own/Weather";
 import { Menu } from 'lucide-react';
 import Link from 'next/link'
 interface NavbarProps{
-    defaultBackground : boolean;
-    mainColor : string;
+    defaultBackground? : boolean;
+    mainColor? : string;
 }
 /*002222*/
 export default function Navbar({defaultBackground = false, mainColor="#E97451" } : NavbarProps){
@@ -61,7 +61,7 @@ export default function Navbar({defaultBackground = false, mainColor="#E97451" }
 interface NavLinkButtonProps {
     label: string;
     href?: string;
-    mainColor: string;
+    mainColor?: string;
 }
 /*E97451*/
 /*2b5c78*/
