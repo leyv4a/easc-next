@@ -9,6 +9,6 @@ export const metadata: Metadata = {
 
 export default function QueHacerLayout({children}: Readonly<{children: React.ReactNode}>) {
     return (
-        <section className={"bg-slate-900/10"}>{children}</section>
+        <section className={""}>{children}</section>
     )
 }

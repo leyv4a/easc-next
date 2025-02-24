@@ -7,9 +7,10 @@ interface NavbarProps{
     defaultBackground? : boolean;
     mainColor? : string;
 }
-/*002222*/
 export default function Navbar({defaultBackground = false, mainColor="#E97451" } : NavbarProps){
     const [isScrolled, setIsScrolled] = React.useState(false);
+
+    const color = mainColor;
 
     const items = [
         {label: "Qué hacer", href: "/quehacer"},
@@ -45,7 +46,7 @@ export default function Navbar({defaultBackground = false, mainColor="#E97451" }
                 </Link>
                 <nav className={"hidden lg:flex gap-5 font-karla  font-semibold text-md 2xl:text-xl "}>
                     {items.map((items,index) => (
-                        <NavLinkButton key={index} label={items.label} href={items.href} mainColor={mainColor}/>
+                        <NavLinkButton key={index} label={items.label} href={items.href} mainColor={color}/>
                     ))}
                 </nav>
                 <nav className={"me-2"}>
@@ -63,8 +64,7 @@ interface NavLinkButtonProps {
     href?: string;
     mainColor?: string;
 }
-/*E97451*/
-/*2b5c78*/
+
 const NavLinkButton: React.FC<NavLinkButtonProps> = ({label, href = "", mainColor="#E97451"}) => (
     <Link href={href} className={`text-white hover:text-[${mainColor}] cursor-pointer group `}>
         {label}
