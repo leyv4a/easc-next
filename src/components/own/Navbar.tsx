@@ -3,6 +3,14 @@ import React from "react";
 import Weather from "@/components/own/Weather";
 import { Menu } from 'lucide-react';
 import Link from 'next/link'
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
 interface NavbarProps{
     defaultBackground? : boolean;
     mainColor? : string;
@@ -33,7 +41,7 @@ export default function Navbar({defaultBackground = false, mainColor="#E97451" }
     }, []);
 
     return (
-        <header className={`fixed  top-0 left-0  right-0 w-full px-0 lg:px-60 
+        <header style={{zIndex : 50}} className={`fixed top-0 left-0  right-0 w-full px-0 lg:px-60 
                     ${defaultBackground ? "bg-black/90" : ""} 
                     ${isScrolled && !defaultBackground ? "bg-black/90 shadow-lg" : ""}
                     ${!isScrolled && !defaultBackground ? "lg:bg-transparent bg-black/90" : ""}
@@ -50,9 +58,19 @@ export default function Navbar({defaultBackground = false, mainColor="#E97451" }
                     ))}
                 </nav>
                 <nav className={"me-2"}>
-                  <button>
-                      <Menu className={"flex lg:hidden text-white size-8"}/>
-                  </button>
+                    <Sheet>
+                        <SheetTrigger><Menu className={"flex lg:hidden text-white size-8"}/></SheetTrigger>
+                        <SheetContent className="h-[500px] sm:h-[600px] bg-black/90 text-white border-black" side="bottom">
+                            <SheetHeader>
+                                <SheetTitle className={"font-bold text-3xl font-karla text-[#e97451] mb-4"}>Escapate a San Carlos</SheetTitle>
+                                <SheetDescription className={" font-karla text-white flex flex-col gap-4"}>
+                                    {items.map((item,index) => (
+                                        <NavLinkButton className={"text-2xl"} key={index} label={item.label} href={item.href} mainColor={color}/>
+                                    ))}
+                                </SheetDescription>
+                            </SheetHeader>
+                        </SheetContent>
+                    </Sheet>
                 </nav>
             </div>
         </header>
@@ -63,11 +81,23 @@ interface NavLinkButtonProps {
     label: string;
     href?: string;
     mainColor?: string;
+    className?: string;
 }
 
-const NavLinkButton: React.FC<NavLinkButtonProps> = ({label, href = "", mainColor="#E97451"}) => (
-    <Link href={href} className={`text-white hover:text-[${mainColor}] cursor-pointer group `}>
+import clsx from 'clsx';
+
+const NavLinkButton: React.FC<NavLinkButtonProps> = ({ label, href = "", mainColor = "#E97451", className = "" }) => (
+    <Link href={href}
+          className={clsx(
+              "text-white cursor-pointer group",
+              `hover:text-[${mainColor}]`,
+              `${className}`
+          )}
+    >
         {label}
-        <span className={`block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[${mainColor}]`}></span>
+        <span
+            className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5"
+            style={{ backgroundColor: mainColor }}
+        ></span>
     </Link>
-)
+);

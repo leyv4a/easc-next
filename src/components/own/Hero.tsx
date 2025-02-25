@@ -7,8 +7,8 @@ export default function Hero(){
             <article className={"flex flex-col justify-center w-full "}>
                 <h1 className={"text-8xl md:text-9xl lg:text-9xl xl:text-md 2xl:text-[14.6rem] text-center font-karla font-bold tracking-widest leading-none  bg-gradient-to-r from-white from-30% via-[#f3922b] text-transparent bg-clip-text to-white bg-300% animate-gradient"}>MAR
                     Y VIDA</h1>
-                <h2 className={"text-5xl ms-8 font-karla font-bold text-white "}>Bienvenido a San Carlos</h2>
-                <p className={"text-white font-medium text-2xl font-karla ms-8"}>Explora, relájate y enamórate de la
+                <h2 className={"text-5xl ms-8 font-karla font-bold text-white text-center md:text-left"}>Bienvenido a San Carlos</h2>
+                <p className={"text-white font-medium text-center md:text-left text-2xl font-karla ms-8"}>Explora, relájate y enamórate de la
                     belleza de San Carlos</p>
             </article>
             <nav className={"md:ms-8 mt-5 flex flex-wrap justify-around w-full items-center "}>

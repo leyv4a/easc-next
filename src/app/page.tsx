@@ -26,7 +26,7 @@ export default function Home() {
                   priority // Carga optimizada
                   quality={90} // Ajusta calidad si es necesario
               />
-              <div className="relative z-10 lg:w-[80vw] container mx-auto mt-40 lg:mt-12">
+              <div className="relative z-10 lg:w-[80vw] container mx-auto mt-40 3xl:mt-20 xl:mt-32">
                   <Navbar/>
                   <Hero/>
               </div>
