@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${karla.variable}  ${logo.variable} antialiased`}
+        className={`${karla.variable}  ${logo.variable} antialiased overflow-x-hidden`}
       >
         {children}
       </body>
