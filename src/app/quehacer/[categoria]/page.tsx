@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import React from "react";
 import Image from "next/image";
 import delfinario from "../../../../public/images/delfinario.jpg";
@@ -33,7 +32,6 @@ export default function CategoriaPage({ params }: { params: { categoria: string 
     // Filtra las actividades por categoría
     const actividadesFiltradas = actividades.filter((a) => a.categoria === categoria);
 
-   /* if (actividadesFiltradas.length === 0) return notFound(); // Si no hay actividades, 404*/
 
     return (
         <>
