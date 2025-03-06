@@ -27,7 +27,12 @@ const actividades =  [
     { id: 20, categoria: "gastronomia", title: "Café y postres en Barracuda's", route: "cafeBarracudas" }
 ];
 
-export default function CategoriaPage({ params }: { params: Record<string, string> }) {
+interface CategoriaPageProps {
+    params: {
+        categoria: string;
+    };
+}
+export default function CategoriaPage({ params }: CategoriaPageProps) {
 
     // Filtra las actividades por categoría
     const actividadesFiltradas = actividades.filter((a) => a.categoria === params.categoria);
