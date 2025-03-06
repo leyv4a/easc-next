@@ -2,13 +2,7 @@ import React from "react";
 import Image from "next/image";
 import delfinario from "../../../../public/images/delfinario.jpg";
 import Link from "next/link";
-import  Props from "next";
 
-interface CategoriaPageProps extends Props {
-    params: {
-        categoria: string;
-    };
-}
 
 const actividades =  [
     { id: 1, categoria: "aire-libre", title: "Senderismo en el Cañón del Nacapule", route: "senderismoNacapule" },
@@ -34,10 +28,14 @@ const actividades =  [
 ];
 
 
-export default function CategoriaPage({ params }: CategoriaPageProps) {
-
+export default function CategoriaPage({
+                                          params,
+                                      }: {
+    params: Promise<{ categoria: string }>
+}) {
+    const { categoria } = await params
     // Filtra las actividades por categoría
-    const actividadesFiltradas = actividades.filter((a) => a.categoria === params.categoria);
+    const actividadesFiltradas = actividades.filter((a) => a.categoria === categoria);
 
 
     return (
