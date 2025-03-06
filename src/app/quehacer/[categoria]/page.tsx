@@ -28,11 +28,7 @@ const actividades =  [
 ];
 
 
-export default function CategoriaPage({
-                                          params,
-                                      }: {
-    params: Promise<{ categoria: string }>
-}) {
+export default async function CategoriaPage({params}: {params: Promise<{ categoria: string }>}) {
     const { categoria } = await params
     // Filtra las actividades por categoría
     const actividadesFiltradas = actividades.filter((a) => a.categoria === categoria);
