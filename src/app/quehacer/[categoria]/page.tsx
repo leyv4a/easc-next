@@ -2,7 +2,13 @@ import React from "react";
 import Image from "next/image";
 import delfinario from "../../../../public/images/delfinario.jpg";
 import Link from "next/link";
+import  Props from "next";
 
+interface CategoriaPageProps extends Props {
+    params: {
+        categoria: string;
+    };
+}
 
 const actividades =  [
     { id: 1, categoria: "aire-libre", title: "Senderismo en el Cañón del Nacapule", route: "senderismoNacapule" },
@@ -27,11 +33,7 @@ const actividades =  [
     { id: 20, categoria: "gastronomia", title: "Café y postres en Barracuda's", route: "cafeBarracudas" }
 ];
 
-interface CategoriaPageProps {
-    params: {
-        categoria: string;
-    };
-}
+
 export default function CategoriaPage({ params }: CategoriaPageProps) {
 
     // Filtra las actividades por categoría
