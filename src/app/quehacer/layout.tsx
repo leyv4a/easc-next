@@ -39,7 +39,7 @@ export default function QueHacerLayout({ children }: { children: React.ReactNode
                         className={"mt-32 container mx-auto flex flex-col items-start justify-end pb-6 h-full font-medium text-white font-karla italic"}>
                         <h1 className={"text-5xl font-bold not-italic mb-3"}>Qué hacer</h1>
                         <p className={"text-3xl"}>Encuentra tu próxima aventura ordenada por categorías</p>
-                        <div className={"flex gap-2 flex-wrap mt-2"}>
+                        <div className={"flex gap-2 flex-wrap mt-2 px-2 md:px-0"}>
                             {categories.map(({label, slug}) => {
                                 const isActive =(slug != "" && pathname === `/quehacer/${slug}`) || (slug == "" && pathname === '/quehacer');
                                 return ( <Link
