@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import delfinario from "../../../../public/images/delfinario.jpg";
 import Link from "next/link";
-import { PageProps } from "next";
+import PageProps  from "next";
 
 const actividades =  [
     { id: 1, categoria: "aire-libre", title: "Senderismo en el Cañón del Nacapule", route: "senderismoNacapule" },
