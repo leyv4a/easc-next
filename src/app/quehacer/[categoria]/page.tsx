@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import delfinario from "../../../../public/images/delfinario.jpg";
 import Link from "next/link";
-import PageProps  from "next";
+
 
 const actividades =  [
     { id: 1, categoria: "aire-libre", title: "Senderismo en el Cañón del Nacapule", route: "senderismoNacapule" },
@@ -27,7 +27,7 @@ const actividades =  [
     { id: 20, categoria: "gastronomia", title: "Café y postres en Barracuda's", route: "cafeBarracudas" }
 ];
 
-export default function CategoriaPage({ params }: PageProps<{ categoria: string }>) {
+export default function CategoriaPage({ params }: { params: { categoria: string } }) {
 
     // Filtra las actividades por categoría
     const actividadesFiltradas = actividades.filter((a) => a.categoria === params.categoria);
@@ -36,8 +36,8 @@ export default function CategoriaPage({ params }: PageProps<{ categoria: string 
     return (
         <>
             {actividadesFiltradas.length > 0 ? (
-                actividadesFiltradas.map((actividad, index) => (
-                    <div key={index} className={'flex flex-col basis-full md:basis-1/4 pt-3 px-3 '}>
+                actividadesFiltradas.map((actividad) => (
+                    <div key={actividad.id} className={'flex flex-col basis-full md:basis-1/4 pt-3 px-3 '}>
                         <Image src={delfinario.src} alt={"Source"} width={130} height={100}
                                className=" w-full object-cover rounded-lg "/>
                         <Link key={actividad.id}
@@ -53,5 +53,12 @@ export default function CategoriaPage({ params }: PageProps<{ categoria: string 
 
 // Pre-renderiza todas las categorías para SEO
 export async function generateStaticParams() {
-    return ["aire-libre", "aventura", "gastronomia"].map((categoria) => ({ categoria }));
+    return [
+        { categoria: "aire-libre" },
+        { categoria: "aventura" },
+        { categoria: "gastronomia" },
+        { categoria: "familia" },
+        { categoria: "noche" },
+        { categoria: "eventos" }
+    ];
 }
