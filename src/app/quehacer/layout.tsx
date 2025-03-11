@@ -6,6 +6,8 @@ import Navbar from "@/components/own/Navbar";
 import React from "react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
+import {useActivities} from "@/hooks/useActivities";
+import { SWRConfig } from "swr";
 
 const categories = [
     {label : "Todos", slug: ""},
@@ -20,9 +22,10 @@ const categories = [
 export default function QueHacerLayout({ children }: { children: React.ReactNode }) {
 
     const pathname = usePathname();
+    const { actividades, error } = useActivities();
 
     return (
-        <>
+        <SWRConfig value={{ fallback: { "http://localhost:8080/api/actividades": actividades } }}>
             <div className={"relative w-screen min-h-[40vh] overflow-x-hidden"}>
                 <Image
                     className={"fixed saturate-50 "}
@@ -66,6 +69,6 @@ export default function QueHacerLayout({ children }: { children: React.ReactNode
                 </div>
                 <aside className={"hidden md:flex basis-3/12 justify-center bg-red-100"}>PUBLICIDAD</aside>
             </div>
-        </>
+        </SWRConfig>
     )
 }

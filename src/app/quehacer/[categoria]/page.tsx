@@ -17,7 +17,7 @@ export default function CategoriaPage({params}: {params: Promise<{ categoria: st
 
     if (!categoria) return <CardLoading/>;
     if (error) return <p>Error cargando datos</p>;
-    if (isLoading) return <CardLoading/>;
+    if (!actividades || actividades.length === 0) return <CardLoading />;
 
     let actividadesFiltradas;
     if (actividades) {

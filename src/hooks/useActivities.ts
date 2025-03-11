@@ -19,5 +19,5 @@ export function useActivities() {
         revalidateOnFocus: false, // No recargar al cambiar de pestaña
         dedupingInterval: 60000, // Mantener los datos en caché por 60s
     });
-    return { actividades: data, error, isLoading };
+    return { actividades: data || [], error };
 }
