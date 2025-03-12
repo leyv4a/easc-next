@@ -19,11 +19,7 @@ export default function CategoriaPage({params}: {params: Promise<{ categoria: st
     if (!categoria) return <CardLoading/>;
     if (error) return <ServerError/>;
     if (!actividades || actividades.length === 0) return <CardLoading />;
-
-    let actividadesFiltradas;
-    if (actividades) {
-         actividadesFiltradas = actividades.filter((a) => a.categoria === categoria) || [];
-    }
+    const actividadesFiltradas = actividades.filter((a) => a.categoria === categoria) || [];
 
 
     return (
