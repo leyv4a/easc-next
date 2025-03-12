@@ -22,7 +22,7 @@ const categories = [
 export default function QueHacerLayout({ children }: { children: React.ReactNode }) {
 
     const pathname = usePathname();
-    const { actividades, error } = useActivities();
+    const { actividades } = useActivities();
 
     return (
         <SWRConfig value={{ fallback: { "http://localhost:8080/api/actividades": actividades } }}>

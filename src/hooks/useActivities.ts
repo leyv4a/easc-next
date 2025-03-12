@@ -15,7 +15,7 @@ interface Actividad {
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function useActivities() {
-    const { data, error, isLoading } = useSWR<Actividad[]>("http://localhost:8080/api/actividades", fetcher, {
+    const { data, error } = useSWR<Actividad[]>("http://localhost:8080/api/actividades", fetcher, {
         revalidateOnFocus: false, // No recargar al cambiar de pestaña
         dedupingInterval: 60000, // Mantener los datos en caché por 60s
     });

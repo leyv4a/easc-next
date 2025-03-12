@@ -9,7 +9,7 @@ import ServerError from "@/components/own/ServerError";
 export default function CategoriaPage({params}: {params: Promise<{ categoria: string }>}) {
     const [categoria, setCategoria] = React.useState<string | null>(null);
 
-    const { actividades, error, isLoading } = useActivities();
+    const { actividades, error} = useActivities();
 
     // Desempaquetar `params` correctamente
     React.useEffect(() => {

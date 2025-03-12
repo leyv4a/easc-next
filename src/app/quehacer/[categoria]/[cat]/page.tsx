@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import {MoveLeft, Star, Link as LinkIcon} from 'lucide-react';
+import {MoveLeft, Star, Link as LinkIcon} from "lucide-react";
 import { useEffect, useState } from "react";
 import {Skeleton} from "@/components/ui/skeleton";
 import delfinario from "../../../../../public/images/delfinario.jpg";
