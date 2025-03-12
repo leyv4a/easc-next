@@ -26,7 +26,7 @@ export default function CategoriaPage({params}: {params: Promise<{ categoria: st
             <>
                 {actividadesFiltradas.length > 0 ? (
                     actividadesFiltradas.map((actividad) => (
-                        <ActivityCard key={actividad.id} id={actividad.id} title={actividad.title} categoria={actividad.categoria} route={actividad.route}/>
+                        <ActivityCard id={actividad.id} title={actividad.title} categoria={actividad.categoria} route={actividad.route}/>
                     ))
                 ) : (
                     <p>No hay actividades en esta categoría.</p>
