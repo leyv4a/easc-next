@@ -7,14 +7,24 @@ import delfinario from "../../../../../public/images/delfinario.jpg";
 import Image from "next/image"
 import { useActivities } from "@/hooks/useActivities";
 
+interface Actividad {
+    id: number;
+    categoria: string;
+    title: string;
+    route: string;
+    ubicacion: string;
+    info: string;
+    calificacion: number;
+}
+
 export default function CatPage({ params }: { params: {cat: string} }) {
     const router = useRouter();
     const [cat, setCat] = useState<string | null>(null);
-    const [activity, setActivity] = useState<any[]>([]);
+    const [activity, setActivity] = useState<Actividad[]>([]);
     const { actividades, error } = useActivities();
 
     const filterDataByRoute = (route: string) => {
-        setActivity(actividades?.filter((a) => a.route === route));
+        setActivity(actividades?.filter((a: Actividad) => a.route === route) || []);
     };
 
     useEffect(() => {
