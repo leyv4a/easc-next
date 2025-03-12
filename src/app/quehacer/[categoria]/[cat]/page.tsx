@@ -7,7 +7,7 @@ import delfinario from "../../../../../public/images/delfinario.jpg";
 import Image from "next/image"
 import { useActivities } from "@/hooks/useActivities";
 
-export default function CatPage({ params }: { params: Promise<{ cat: string }> }) {
+export default function CatPage({ params }: { params: {cat: string} }) {
     const router = useRouter();
     const [cat, setCat] = useState<string | null>(null);
     const [activity, setActivity] = useState<any[]>([]);
@@ -18,10 +18,10 @@ export default function CatPage({ params }: { params: Promise<{ cat: string }> }
     };
 
     useEffect(() => {
-            params.then((resolvedParams) => {
-                setCat(resolvedParams.cat);
-                filterDataByRoute(resolvedParams.cat); // Se llama después de actualizar cat
-            });
+        if (params?.cat) {
+            setCat(params.cat);
+            filterDataByRoute(params.cat)
+        }
     }, [params]);
 
     if (!cat) return <Skeleton className="w-full h-[400px] rounded-md mt-5 me-2" />;
