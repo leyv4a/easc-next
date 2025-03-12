@@ -17,7 +17,7 @@ interface Actividad {
     calificacion: number;
 }
 
-export default function CatPage({ params }: { params: {cat: string} }) {
+export default function CatPage({ params }: { params: Promise<{ cat: string }> }) {
     const router = useRouter();
     const [cat, setCat] = useState<string | null>(null);
     const [activity, setActivity] = useState<Actividad[]>([]);
@@ -28,10 +28,10 @@ export default function CatPage({ params }: { params: {cat: string} }) {
     };
 
     useEffect(() => {
-        if (params?.cat) {
-            setCat(params.cat);
-            filterDataByRoute(params.cat)
-        }
+        params.then((resolvedParams) => {
+            setCat(resolvedParams.cat);
+            filterDataByRoute(resolvedParams.cat);
+        })
     }, [params]);
 
     if (!cat) return <Skeleton className="w-full h-[400px] rounded-md mt-5 me-2" />;
