@@ -4,6 +4,7 @@ import React from "react";
 import { useActivities } from "@/hooks/useActivities";
 import CardLoading from "@/components/own/CardLoading";
 import ActivityCard from "@/components/own/ActivityCard";
+import ServerError from "@/components/own/ServerError";
 
 export default function CategoriaPage({params}: {params: Promise<{ categoria: string }>}) {
     const [categoria, setCategoria] = React.useState<string | null>(null);
@@ -16,7 +17,7 @@ export default function CategoriaPage({params}: {params: Promise<{ categoria: st
     }, [params]);
 
     if (!categoria) return <CardLoading/>;
-    if (error) return <p>Error cargando datos</p>;
+    if (error) return <ServerError/>;
     if (!actividades || actividades.length === 0) return <CardLoading />;
 
     let actividadesFiltradas;
