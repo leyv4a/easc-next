@@ -11,7 +11,7 @@ export default function CatPage({ params }: { params: Promise<{ cat: string }> }
     const router = useRouter();
     const [cat, setCat] = useState<string | null>(null);
     const [activity, setActivity] = useState<any[]>([]);
-    const { actividades, error, isLoading } = useActivities();
+    const { actividades, error } = useActivities();
 
     const filterDataByRoute = (route: string) => {
         setActivity(actividades?.filter((a) => a.route === route));
@@ -27,7 +27,7 @@ export default function CatPage({ params }: { params: Promise<{ cat: string }> }
     if (!cat) return <Skeleton className="w-full h-[400px] rounded-md mt-5 me-2" />;
 
     if (error) return <p>Error cargando datos</p>;
-    if (isLoading) return <Skeleton className="w-full h-[400px] rounded-md mt-5 me-2" />;
+    if (!actividades || actividades.length === 0) return <Skeleton className="w-full h-[400px] rounded-md mt-5 me-2" />;
 
     return (
         <>
